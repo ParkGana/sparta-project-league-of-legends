@@ -27,7 +27,10 @@ export const fetchChampions = async (): Promise<ChampionsType> => {
 
 /* champion 데이터 가져오기 */
 export const fetchChampion = async (id: string): Promise<ExtendedChampionType> => {
-    const res = await fetch(`https://ddragon.leagueoflegends.com/cdn/14.24.1/data/ko_KR/champion/${id}.json`);
+    const res = await fetch(`https://ddragon.leagueoflegends.com/cdn/14.24.1/data/ko_KR/champion/${id}.json`, {
+        cache: 'no-store'
+    });
+
     const data = await res.json();
     const versionData: string = data.version;
     const championData: ChampionType = data.data;
