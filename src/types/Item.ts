@@ -2,6 +2,11 @@ export interface ItemsType {
     [key: string]: ItemValueType;
 }
 
+export interface ExtendedItemsType {
+    version: string;
+    data: ItemsType;
+}
+
 /****************************************************************************************************/
 
 export interface ItemValueType {
