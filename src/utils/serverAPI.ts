@@ -13,7 +13,12 @@ export const fetchVersion = async (): Promise<string> => {
 export const fetchChampions = async (): Promise<ChampionsType> => {
     const version = await fetchVersion();
 
-    const res = await fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/champion.json`);
+    const res = await fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/champion.json`, {
+        next: {
+            revalidate: 60 * 60 * 24
+        }
+    });
+
     const data = await res.json();
     const championsData: ChampionsType = data.data;
 
