@@ -1,13 +1,10 @@
-'use client';
+'use server';
+import { ChampionsType } from '@/types/Champion';
+import { fetchChampions } from '@/utils/serverAPI';
 
-import { useEffect } from 'react';
-
-export default function Champions() {
-    useEffect(() => {
-        fetch('https://ddragon.leagueoflegends.com/cdn/14.24.1/data/ko_KR/champion.json')
-            .then((res) => res.json())
-            .then((data) => console.log(data));
-    }, []);
+export default async function Champions() {
+    const data: ChampionsType = await fetchChampions();
+    console.log('champions => ', data);
 
     return <div>Champions</div>;
 }

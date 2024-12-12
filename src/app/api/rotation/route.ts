@@ -1,3 +1,4 @@
+import { RotationType } from '@/types/Rotation';
 import { NextResponse } from 'next/server';
 
 export async function GET(): Promise<NextResponse> {
@@ -7,7 +8,7 @@ export async function GET(): Promise<NextResponse> {
         }
     });
 
-    const data = await res.json();
+    const data: RotationType = await res.json();
 
     return NextResponse.json(data);
 }
