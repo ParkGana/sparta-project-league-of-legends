@@ -1,4 +1,4 @@
-import { ChampionsType, ChampionType } from '@/types/Champion';
+import { ChampionsType, ChampionType, ExtendedChampionType } from '@/types/Champion';
 import { ExtendedItemsType, ItemsType } from '@/types/Item';
 
 /* version 데이터 가져오기 */
@@ -21,12 +21,13 @@ export const fetchChampions = async (): Promise<ChampionsType> => {
 };
 
 /* champion 데이터 가져오기 */
-export const fetchChampion = async (id: string): Promise<ChampionType> => {
+export const fetchChampion = async (id: string): Promise<ExtendedChampionType> => {
     const res = await fetch(`https://ddragon.leagueoflegends.com/cdn/14.24.1/data/ko_KR/champion/${id}.json`);
     const data = await res.json();
+    const versionData: string = data.version;
     const championData: ChampionType = data.data;
 
-    return championData;
+    return { version: versionData, data: championData };
 };
 
 /* item 목록 데이터 가져오기 */

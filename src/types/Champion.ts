@@ -6,6 +6,11 @@ export interface ChampionType {
     [key: string]: ChampionDetailValueType;
 }
 
+export interface ExtendedChampionType {
+    version: string;
+    data: ChampionType;
+}
+
 /****************************************************************************************************/
 
 interface ChampionValueType {
