@@ -17,8 +17,14 @@
 }
 
 body {
+    -ms-overflow-style: none;
     color: rgb(var(--foreground-rgb));
+    background: #000000;
     /* background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 @layer utilities {
