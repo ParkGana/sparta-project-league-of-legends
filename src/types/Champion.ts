@@ -1,4 +1,14 @@
+export interface ChampionsType {
+    [key: string]: ChampionValueType;
+}
+
 export interface ChampionType {
+    [key: string]: ChampionDetailValueType;
+}
+
+/****************************************************************************************************/
+
+interface ChampionValueType {
     version: string;
     id: string;
     key: string;
@@ -12,7 +22,7 @@ export interface ChampionType {
     stats: ChampionStatsType;
 }
 
-export interface ChampionDetailType extends Omit<ChampionType, 'version'> {
+interface ChampionDetailValueType extends Omit<ChampionValueType, 'version'> {
     skins: ChampionSkinType[];
     lore: string;
     allytips: string[];

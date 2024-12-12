@@ -1,4 +1,10 @@
-export interface ItemType {
+export interface ItemsType {
+    [key: string]: ItemValueType;
+}
+
+/****************************************************************************************************/
+
+export interface ItemValueType {
     name: string;
     description: string;
     colloq: string;
@@ -31,12 +37,7 @@ interface ItemGoldType {
 }
 
 interface ItemMapsType {
-    11: boolean;
-    12: boolean;
-    21: boolean;
-    22: boolean;
-    30: boolean;
-    33: boolean;
+    [key: string]: boolean;
 }
 
 interface ItemStatsType {
