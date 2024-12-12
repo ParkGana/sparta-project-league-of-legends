@@ -15,19 +15,21 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <header className="flex justify-around bg-[#1f2937] py-4">
-                    <Link href="/" className="text-white font-bold">
-                        HOME
-                    </Link>
-                    <Link href="/champions" className="text-white font-bold">
-                        CHAMPIONS
-                    </Link>
-                    <Link href="/items" className="text-white font-bold">
-                        ITEMS
-                    </Link>
-                    <Link href="/rotation" className="text-white font-bold">
-                        ROTATION
-                    </Link>
+                <header className="sticky top-0 bg-gray-800">
+                    <div className="max-w-[1200px] flex justify-around py-4 mx-auto">
+                        <Link href="/" className="text-white font-bold">
+                            HOME
+                        </Link>
+                        <Link href="/champions" className="text-white font-bold">
+                            CHAMPIONS
+                        </Link>
+                        <Link href="/items" className="text-white font-bold">
+                            ITEMS
+                        </Link>
+                        <Link href="/rotation" className="text-white font-bold">
+                            ROTATION
+                        </Link>
+                    </div>
                 </header>
                 {children}
             </body>
