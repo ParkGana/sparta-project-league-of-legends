@@ -5,8 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function Champions() {
-    const data: ChampionsType = await fetchChampions();
-    // console.log('champions => ', data);
+    const data: ChampionsType = await fetchChampions(60 * 60 * 24);
 
     return (
         <div className="max-w-[1200px] flex flex-col items-center gap-8 m-8 mx-auto">

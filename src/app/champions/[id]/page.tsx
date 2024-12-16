@@ -12,7 +12,6 @@ type ChampionProps = {
 
 export default async function Champion({ params }: ChampionProps) {
     const { version, data }: ExtendedChampionType = await fetchChampion(params.id);
-    // console.log('champion => ', data);
 
     const [key, value] = Object.entries(data)[0];
 

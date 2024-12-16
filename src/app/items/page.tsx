@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 export default async function Items() {
     const { version, data }: ExtendedItemsType = await fetchItems();
-    // console.log('items => ', data);
 
     return (
         <div className="max-w-[1200px] flex flex-col items-center gap-8 m-8 mx-auto">
