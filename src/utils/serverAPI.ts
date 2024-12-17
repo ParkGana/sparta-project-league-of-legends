@@ -1,3 +1,4 @@
+'use server';
 import { ChampionsType, ChampionType, ExtendedChampionType } from '@/types/Champion';
 import { ExtendedItemsType, ItemsType } from '@/types/Item';
 

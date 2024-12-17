@@ -1,4 +1,3 @@
-'use server';
 import { ExtendedItemsType } from '@/types/Item';
 import { fetchItems } from '@/utils/serverAPI';
 import Image from 'next/image';

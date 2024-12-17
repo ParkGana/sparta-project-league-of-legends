@@ -1,4 +1,3 @@
-'use server';
 import { ExtendedChampionType } from '@/types/Champion';
 import { formatChampionInfo } from '@/utils/formatData';
 import { fetchChampion } from '@/utils/serverAPI';

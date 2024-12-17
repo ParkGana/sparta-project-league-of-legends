@@ -1,4 +1,3 @@
-'use server';
 import { ChampionsType } from '@/types/Champion';
 import { fetchChampions } from '@/utils/serverAPI';
 import Image from 'next/image';
