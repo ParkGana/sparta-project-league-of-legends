@@ -2,7 +2,7 @@ import { ChampionsType } from '@/types/Champion';
 import { useQuery } from '@tanstack/react-query';
 
 export function useRotation() {
-    const { data, isPending, isError } = useQuery({
+    const query = useQuery({
         queryKey: ['rotation'],
         queryFn: async () => {
             const res = await fetch('/api/rotation');
@@ -13,5 +13,5 @@ export function useRotation() {
         }
     });
 
-    return { data, isPending, isError };
+    return query;
 }

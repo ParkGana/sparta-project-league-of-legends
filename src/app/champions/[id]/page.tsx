@@ -29,7 +29,7 @@ export default async function Champion({ params }: ChampionProps) {
             <p className="text-white">{value.lore}</p>
             <div className="flex gap-2">
                 {Object.entries(value.info).map(([infoKey, infoValue], index) => (
-                    <p className="flex gap-2">
+                    <p className="flex gap-2" key={infoKey}>
                         <span className="text-primary">{formatChampionInfo(infoKey)}</span>
                         <span className="text-primary font-bold">{infoValue}</span>
                         {index < Object.keys(value.info).length - 1 && (
