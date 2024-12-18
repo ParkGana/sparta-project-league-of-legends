@@ -13,7 +13,7 @@ export interface ExtendedChampionType {
 
 /****************************************************************************************************/
 
-interface ChampionValueType {
+export interface ChampionValueType {
     version: string;
     id: string;
     key: string;
