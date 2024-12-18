@@ -2,6 +2,7 @@ import { ExtendedChampionType } from '@/types/Champion';
 import { formatChampionInfo } from '@/utils/formatData';
 import { fetchChampion } from '@/utils/serverAPI';
 import Image from 'next/image';
+import { v4 as uuid } from 'uuid';
 
 type ChampionProps = {
     params: {
@@ -29,7 +30,7 @@ export default async function Champion({ params }: ChampionProps) {
             <p className="text-white">{value.lore}</p>
             <div className="flex gap-2">
                 {Object.entries(value.info).map(([infoKey, infoValue], index) => (
-                    <p className="flex gap-2" key={infoKey}>
+                    <p className="flex gap-2" key={uuid()}>
                         <span className="text-primary">{formatChampionInfo(infoKey)}</span>
                         <span className="text-primary font-bold">{infoValue}</span>
                         {index < Object.keys(value.info).length - 1 && (
